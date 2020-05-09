@@ -1,0 +1,34 @@
+﻿<div class="text-center">
+    <h1 class="display-4">Grupo Okunoba S.A de C.V.</h1>
+    <p>Aplicaci&oacute;n de control de inventarios.</a></p>
+</div>
+<div class="jumbotron">
+    <h1>@ViewBag.ActionTitle</h1>
+    <p class="lead">
+        Es una aplicaci&oacute;n Web para la administraci&oacute;n y manejo de inventario f&iacute;sico de productos.
+</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="service">
+            <h3>Inventario</h3>
+            <p> Consulta el resumen de existencias en producto en tiempo real.  </p>
+            <p>@Html.ActionLink("Inventario", "Budget", "Stocks", null, new { @Class = "btn btn-warning" })</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="service">
+            <h3>Lista de productos</h3>
+            <p>Encuentra o agrega productos nuevos al cat&aacute;.</p>
+            <p>@Html.ActionLink("Productos", "Index", "Items", null, new { @Class = "btn btn-warning" })</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="service">
+            <h3>An&aacute;lisis</h3>
+            <p>Analisis estad&iacute;stico de Grupo Okunoba S.A. de C.V.</p>
+            <p>@Html.ActionLink("Analisis", "Index", "", null, new { @Class = "btn btn-warning" })</p>
+        </div>
+    </div>
+</div>

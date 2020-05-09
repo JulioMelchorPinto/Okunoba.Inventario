@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Inventario.Models.Item>
+<h1>@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr />
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Save">Nuevo</a>
+</p>
+<table id="items" class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @if (User.IsInRole("Administrador"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th></th>
+            }
+            </tr>
+            
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            @if (User.IsInRole("Administrador"))
+            {
+                <td>
+                    @Html.ActionLink(item.Name, "Details", "Items", new { id = item.Id })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            }
+            @if (User.IsInRole("Administrador"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    <div class="btn-group-sm">
+                        <a class="btn btn-outline-info" asp-action="Save" asp-route-id="@item.Id">Modificar</a>
+                        <button type="submit" data-id="@item.Id" class="btn btn-outline-danger js-delete">Eliminar</button>
+                    </div>
+                </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#items").DataTable({
+                "processing": true, // for show progress bar
+                "serverSide": false, // for process server side
+                "filter": true, // this is for disable filter (search box)
+                "orderMulti": true, // for disable multiple column at once
+                buttons: [{
+                    extend: 'excel',
+                    text: 'Excel',
+                    className: 'exportExcel',
+                    filename: 'Tazabilidad',
+                    exportOptions: { modifier: { page: 'all' } }
+                },
+                {
+                    extend: 'csv',
+                    text: 'CSV',
+                    className: 'exportExcel',
+                    filename: 'Tazabilidad',
+                    exportOptions: { modifier: { page: 'all' } }
+                }
+                ]
+            });
+            $('#items').on('click', '.js-delete', function () {
+                var button = $(this);
+                bootbox.confirm("¿Está seguro que desea borrar este elemento?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: '/Items/Delete/' + button.attr('data-id'),
+                            method: "POST",
+                            success: function () {
+                                button.parents("tr").remove();
+                                toastr.success("El elemento se eliminó con éxito", "Listo!")
+                            },
+                            error: function () {
+                                toastr.error("No se pudo eliminar el elemento", "Error")
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

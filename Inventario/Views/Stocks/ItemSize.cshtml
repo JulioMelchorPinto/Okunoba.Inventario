@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Inventario.ViewModels.ItemInStock>
+<h1>@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr />
+
+<h4>
+    <a class="badge badge-info"
+       asp-action="Budget">@Html.ViewData["Label"]</a> &gt;
+    <a class="badge badge-info"
+       asp-action="ItemType"
+       asp-route-prodName="@Html.ViewData["Item"]">@Html.ViewData["Item"]</a> &gt;
+    <a class="badge badge-info"
+       asp-action="ItemSize"
+       asp-route-prodName="@Html.ViewData["Item"]"
+       asp-route-prodType="@Html.ViewData["ItemType"]">@Html.ViewData["ItemType"]</a>
+</h4>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Nuevo</a>
+</p>
+<table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemTypeName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ItemSizeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+        </tr>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => item.ItemName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ItemTypeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ItemSizeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.Weight)</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

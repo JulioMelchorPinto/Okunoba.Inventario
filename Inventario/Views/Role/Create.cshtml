@@ -1,0 +1,19 @@
+﻿@model string
+<h1 class="bg-info text-white">@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label for="name">Nombre del Rol:</label>
+                <input name="name" class="form-control" />
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                <a asp-action="Index" class="btn btn-outline-dark">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

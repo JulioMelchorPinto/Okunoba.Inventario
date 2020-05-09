@@ -1,0 +1,31 @@
+﻿@model Inventario.Models.AppUser
+@{
+    
+}
+<h1 class="bg-info text-white">@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr />
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input name="password" class="form-control" />
+    </div>
+    <div class="btn-group">
+        <input type="submit" class="btn btn-outline-primary" value="Guardar" />
+        <a class="btn btn-outline-dark" asp-action="Index">Cancel</a>
+    </div>
+</form>

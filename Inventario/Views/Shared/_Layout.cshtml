@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Okunoba</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/buttons.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/select.dataTables.min.css" />
+    <link rel="stylesheet" href="~/lib/toastr/css/toastr.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/okunoba_logo.png" width="50">Okunoba</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cat&aacute;logos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="ItemTypes" asp-action="Index">Categor&iacute;as</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="ItemSizes" asp-action="Index">Tallas</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Items" asp-action="Index">Productos</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Companies" asp-action="Index">Clientes y proveedores</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Inventario
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Stocks" asp-action="Budget">Existencias</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Stocks" asp-action="Index">Buscar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administraci&oacute;n
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index">Usuarios</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Role" asp-action="Index">Roles</a>
+                                @*<a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Stocks" asp-action="Index">Base de datos</a>*@
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ayuda
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Home" asp-action="Manual">Manual de usuario</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Home" asp-action="About">Acerca de ...</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - Okunoba - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/buttons.colVis.min.js"></script>
+    <script src="~/lib/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.select.min.js"></script>
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script src="~/lib/toastr/js/toastr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

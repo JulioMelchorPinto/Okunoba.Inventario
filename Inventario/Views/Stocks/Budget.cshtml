@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Inventario.ViewModels.StockViewModel>
+
+<h1>@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr/>
+<h4>
+    <a class="badge badge-info" asp-action="Budget">@ViewData["Label"]</a>
+</h4>
+
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Nuevo</a>
+</p>
+<table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalWeight)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td><a asp-action="ItemType" asp-controller="Stocks" asp-route-prodName="@item.ItemName">@Html.DisplayFor(modelItem => item.ItemName)</a> </td>
+            <td>@Html.DisplayFor(modelItem => item.TotalQuantity)</td>
+            <td>@Html.DisplayFor(modelItem => item.TotalWeight)</td>
+        </tr>
+        }
+    </tbody>
+</table>

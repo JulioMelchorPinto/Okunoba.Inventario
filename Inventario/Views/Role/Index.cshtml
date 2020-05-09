@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Inventario.Models.AppRole>
+<h1 class="bg-info text-white">@ViewData["Title"]</h1>
+<h3>@ViewData["Subtitle"]</h3>
+<hr/>
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Nuevo</a>
+</p>
+<table id="roles" class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <div class="btn-group-sm">
+                            <a class="btn btn-outline-info" asp-action="Update" asp-route-id="@item.Id">Usuarios</a>
+                            <button type="submit" data-id="@item.Id" class="btn btn-outline-danger js-delete">Eliminar</button>
+                        </div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#roles').on('click', '.js-delete', function () {
+                var button = $(this);
+                bootbox.confirm("¿Está seguro que desea borrar este elemento?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: '/Role/Delete/' + button.attr('data-id'),
+                            method: "POST",
+                            success: function () {
+                                button.parents("tr").remove();
+                                toastr.success("El elemento eliminó con éxito", "Listo!")
+                            },
+                            error: function () {
+                                toastr.error("No se pudo eliminar la especie", "Error")
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
