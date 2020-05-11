@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ci2D0eWYI88saBLqrjinU9mA/pLZuThUqasGIbC1d7sELmepH3WJCGdIWcm6p0+t8ynvKac59SC7nvG0UOJIDw==",
+  "dgSpecHash": "ZZV5/k9pO0H36WPwdf27pVpLANva8SqpUtzox40r+uEwMwgdYCYhF1WGzs9MaGSG8b3h4jJSWnOQxTskRaauhA==",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\Inventario.csproj",
+  "projectFilePath": "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\Inventario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.0.0\\microsoft.aspnetcore.cryptography.internal.3.0.0.nupkg.sha512",
     "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.0.0\\microsoft.aspnetcore.cryptography.keyderivation.3.0.0.nupkg.sha512",
@@ -164,11 +164,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
-    "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\Julio Melchor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\Inventario.csproj": {}
+    "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\Inventario.csproj": {}
   },
   "projects": {
-    "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\Inventario.csproj": {
+    "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\Inventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\Inventario.csproj",
+        "projectUniqueName": "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\Inventario.csproj",
         "projectName": "Inventario",
-        "projectPath": "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\Inventario.csproj",
+        "projectPath": "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\Inventario.csproj",
         "packagesPath": "C:\\Users\\Julio Melchor\\.nuget\\packages\\",
-        "outputPath": "C:\\Program Files (x86)\\Okunoba\\Inventario2.0\\Inventario\\Inventario\\obj\\",
+        "outputPath": "C:\\Users\\Julio Melchor\\beaverNet\\Inventario\\Inventario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Julio Melchor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -88,24 +90,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.3, 3.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
